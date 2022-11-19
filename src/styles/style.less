@@ -19,7 +19,7 @@ code {
     padding-right: 4px;
     padding-top: 2px;
     padding-bottom: 2px;
-    color: #c7254e;
+    color: #9425c7;
     border-radius: 4px;
 }
 
@@ -30,7 +30,35 @@ code {
 .full-screen {
     width: 100%;
     height: 100%;
-    background-color: @layout-body-background;
+    background: linear-gradient(273deg,deepskyblue,#000ff5,#00ffff);
+    background-size: 180% 180%;
+    animation: gradient-animation 3s ease infinite;
+}
+  
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+.aside-links {
+    font-weight: 600;
+}
+
+.navbar {
+    background-color: #ffffff;
+    color: black;
+    font-weight: 600;
+}
+
+.links-nav {
+    color: black;
 }
 
 hr {

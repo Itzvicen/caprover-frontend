@@ -8,7 +8,7 @@ import {
     GithubOutlined,
     LaptopOutlined,
     LogoutOutlined,
-    SettingOutlined,
+    SettingOutlined
 } from '@ant-design/icons'
 import { Button, Col, Layout, Menu, Row } from 'antd'
 import React, { Fragment, RefObject } from 'react'
@@ -33,6 +33,7 @@ import Monitoring from './monitoring/Monitoring'
 import Cluster from './nodes/Cluster'
 import Settings from './settings/Settings'
 
+
 const { Header, Content, Sider } = Layout
 
 const MENU_ITEMS = [
@@ -48,7 +49,7 @@ const MENU_ITEMS = [
     },
     {
         key: 'monitoring',
-        name: 'Monitoring',
+        name: 'Monitorizción',
         icon: <DashboardOutlined />,
     },
     {
@@ -58,7 +59,7 @@ const MENU_ITEMS = [
     },
     {
         key: 'settings',
-        name: 'Settings',
+        name: 'Ajustes',
         icon: <SettingOutlined />,
     },
 ]
@@ -185,7 +186,7 @@ class PageRoot extends ApiComponent<
         return (
             <Layout className="full-screen">
                 <Header
-                    className="header"
+                    className="navbar"
                     style={{
                         padding: `0 ${this.props.isMobile ? 15 : 50}px`,
                     }}
@@ -196,7 +197,7 @@ class PageRoot extends ApiComponent<
                                 <Col span={4}>
                                     <Button
                                         ghost
-                                        icon={<BarsOutlined />}
+                                        icon={<BarsOutlined style={{ color: "black", fontWeight: 600}} />}
                                         onClick={this.toggleSider}
                                     />
                                 </Col>
@@ -205,7 +206,6 @@ class PageRoot extends ApiComponent<
                                 self.createUpdateAvailableIfNeeded()) || (
                                 <Col lg={{ span: 12 }} xs={{ span: 20 }}>
                                     <div>
-                                        <h3 style={{ color: '#fff' }}>
                                             <img
                                                 alt="logo"
                                                 src="/icon-512x512.png"
@@ -214,28 +214,27 @@ class PageRoot extends ApiComponent<
                                                     marginRight: 10,
                                                 }}
                                             />
-                                            CapRover
                                             {self.createUpdateAvailableIfNeeded()}
-                                        </h3>
+
                                     </div>
                                 </Col>
                             )}
                             {!self.props.isMobile && (
                                 <Col span={12}>
                                     <Row justify="end">
-                                        <NewTabLink url="https://github.com/caprover/caprover">
-                                            <span style={{ marginRight: 20 }}>
+                                        <NewTabLink url="https://github.com/itzvicen">
+                                            <span style={{ marginRight: 20 }} className='links-nav'>
                                                 GitHub
                                             </span>
                                         </NewTabLink>
 
-                                        <span
+                                        <span className='links-nav'
                                             style={{
                                                 marginRight: 70,
                                             }}
                                         >
-                                            <NewTabLink url="https://caprover.com">
-                                                Docs
+                                            <NewTabLink url="https://spacecloud.live">
+                                                Inicio
                                             </NewTabLink>
                                         </span>
                                         <span
@@ -249,7 +248,7 @@ class PageRoot extends ApiComponent<
                                             <span
                                                 style={{
                                                     border: '1px solid #1b8ad3',
-                                                    borderRadius: 5,
+                                                    borderRadius: 4,
                                                     padding: 8,
                                                 }}
                                             >
@@ -261,7 +260,7 @@ class PageRoot extends ApiComponent<
                                                         self.goToLogin()
                                                     }}
                                                 >
-                                                    Logout <LogoutOutlined />
+                                                    Salir <LogoutOutlined />
                                                 </ClickableLink>
                                             </span>
                                         </span>
@@ -287,13 +286,13 @@ class PageRoot extends ApiComponent<
                             selectedKeys={[
                                 this.props.location.pathname.substring(1),
                             ]}
-                            theme="dark"
+                            theme="light"
                             mode="inline"
                             defaultSelectedKeys={['dashboard']}
                             style={{ height: '100%', borderRight: 0 }}
                         >
                             {MENU_ITEMS.map((item) => (
-                                <Menu.Item key={item.key}>
+                                <Menu.Item key={item.key} className="aside-links">
                                     <Link
                                         to={`/${item.key}`}
                                         className="nav-text"
@@ -309,7 +308,7 @@ class PageRoot extends ApiComponent<
                                     <div
                                         style={{
                                             backgroundColor:
-                                                'rgba(255, 255, 255, 0.65)',
+                                                'rgba(0, 0, 0, 0.85)',
                                             height: 1,
                                             width: '80%',
                                             margin: '15px auto',
@@ -318,11 +317,11 @@ class PageRoot extends ApiComponent<
                                     <div
                                         className="ant-menu-item"
                                         role="menuitem"
-                                        style={{ paddingLeft: 24 }}
+                                        style={{ paddingLeft: 24}}
                                     >
-                                        <NewTabLink url="https://github.com/caprover/caprover">
-                                            <GithubOutlined />
-                                            GitHub
+                                        <NewTabLink url="https://github.com/itzvicen">
+                                            <GithubOutlined style={{paddingRight: 10}}/>
+                                             GitHub
                                         </NewTabLink>
                                     </div>
 
@@ -331,9 +330,9 @@ class PageRoot extends ApiComponent<
                                         role="menuitem"
                                         style={{ paddingLeft: 24 }}
                                     >
-                                        <NewTabLink url="https://caprover.com">
-                                            <FileTextOutlined />
-                                            Docs
+                                        <NewTabLink url="https://spacecloud.live">
+                                            <FileTextOutlined style={{paddingRight: 10}}/>
+                                             Inicio
                                         </NewTabLink>
                                     </div>
 
@@ -349,8 +348,8 @@ class PageRoot extends ApiComponent<
                                             }}
                                         >
                                             {' '}
-                                            <LogoutOutlined />
-                                            Logout
+                                            <LogoutOutlined style={{paddingRight: 10}}/>
+                                             Salir
                                         </ClickableLink>
                                     </div>
                                 </Fragment>

@@ -60,7 +60,7 @@ export default class Login extends ApiComponent<RouteComponentProps<any>, any> {
                         transform: 'translate(-50%,-50%)',
                     }}
                 >
-                    <Card title="CapRover Login" style={{ width: 380 }}>
+                    <Card title="SpaceCloud Login" style={{ width: 380 }}>
                         <NormalLoginForm
                             onLoginRequested={(
                                 password: string,
@@ -122,7 +122,7 @@ class NormalLoginForm extends React.Component<
                     onChange={(e) => {
                         self.setState({ passwordEntered: `${e.target.value}` })
                     }}
-                    placeholder="Password"
+                    placeholder="Contraseña"
                     autoFocus
                 />
                 <div style={{ marginTop: 20, marginBottom: 20 }}>
@@ -135,12 +135,12 @@ class NormalLoginForm extends React.Component<
                                 self.handleSubmit()
                             }}
                         >
-                            Login
+                            Iniciar sesión
                         </Button>
                     </Row>
                 </div>
                 <Collapse>
-                    <Collapse.Panel header="Remember Me" key="1">
+                    <Collapse.Panel header="Recuerdame" key="1">
                         <Radio.Group
                             onChange={(e) => {
                                 console.log(e.target.value)
@@ -151,13 +151,13 @@ class NormalLoginForm extends React.Component<
                             value={self.state.loginOption}
                         >
                             <Radio style={radioStyle} value={NO_SESSION}>
-                                No session persistence (Most Secure)
+                                Sin persistencia de la sesión (Seguro)
                             </Radio>
                             <Radio style={radioStyle} value={SESSION_STORAGE}>
-                                Use sessionStorage
+                                Usar almacenamiento de sesión
                             </Radio>
                             <Radio style={radioStyle} value={LOCAL_STORAGE}>
-                                Use localStorage (Most Persistent)
+                                Usar almacenamiento local (Persist.)
                             </Radio>
                         </Radio.Group>
                     </Collapse.Panel>

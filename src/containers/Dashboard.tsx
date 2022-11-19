@@ -1,5 +1,4 @@
 import { Button, Card, Col, Input, Modal, Row, Tooltip } from 'antd'
-import React from 'react'
 import { Redirect, RouteComponentProps } from 'react-router'
 import AppConstants from '../utils/AppConstants'
 import Toaster from '../utils/Toaster'
@@ -296,7 +295,7 @@ export default class Dashboard extends ApiComponent<
         return (
             <Row justify="center">
                 <Col xs={{ span: 23 }} lg={{ span: 16 }}>
-                    <Card title="CapRover Root Domain Configurations">
+                    <Card title="Spacecloud configuraciones dominio raíz">
                         <div>
                             <p>
                                 The very first thing that CapRover needs is a
@@ -395,7 +394,7 @@ export default class Dashboard extends ApiComponent<
         return (
             <Row justify="center">
                 <Col xs={{ span: 23 }} lg={{ span: 16 }}>
-                    <Card title="CapRover Initial Setup">
+                    <Card title="Spacecloud setup inicial">
                         <div>
                             <h3>
                                 Congratulations!{' '}
