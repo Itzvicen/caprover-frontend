@@ -8,7 +8,7 @@ class ErrorRetry extends Component<any, {}> {
         const self = this
         return (
             <div style={{ textAlign: 'center', padding: 36 }}>
-                <p>An error occurred. Please try again.</p>
+                <p>A ocurrido un error. Por favor, intentalo de nuevo</p>
                 <Row justify="center">
                     <Button
                         type="primary"
@@ -16,7 +16,7 @@ class ErrorRetry extends Component<any, {}> {
                             self.props.emitRootKeyChanged()
                         }}
                     >
-                        Reload
+                        Recargar
                     </Button>
                 </Row>
             </div>

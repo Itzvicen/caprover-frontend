@@ -54,8 +54,8 @@ export default class DefaultDockerRegistry extends Component<
         return (
             <div>
                 <Modal
-                    title="Edit Push Registry"
-                    okText="Save and Update"
+                    title="Editar registro de inserción"
+                    okText="Guardar y actualizar"
                     onCancel={() => self.setState({ isInEditMode: false })}
                     onOk={() => {
                         self.setState({ isInEditMode: false })
@@ -66,15 +66,15 @@ export default class DefaultDockerRegistry extends Component<
                     visible={self.state.isInEditMode}
                 >
                     <p>
-                        Default Docker Registry is the registry that will be
-                        used to store your newly built images. You can select{' '}
-                        <code>{DISABLED_PUSH}</code> if you don't want to push
-                        your newly built images to any docker registry. Keep in
-                        mind that if you use <code>{DISABLED_PUSH}</code>,
-                        cluster nodes (if you happen to have more than one
-                        server) will not be able to run your applications.
+                    Default Docker Registry es el registro que será
+                         utilizado para almacenar sus imágenes recién construidas. Puedes elegir{' '}
+                        <code>{DISABLED_PUSH}</code> si no quieres empujar
+                         sus imágenes recién creadas en cualquier registro docker. Mantener dentro
+                         cuenta que si usas <code>{DISABLED_PUSH}</code>,
+                         nodos de clúster (si tiene más de uno
+                         servidor) no podrá ejecutar sus aplicaciones.
                     </p>
-                    <p>Change the default Docker Registry:</p>
+                    <p>Cambie el Registro de Docker predeterminado:</p>
                     <Select
                         defaultValue={
                             this.props.apiData.defaultPushRegistryId || NONE
@@ -103,13 +103,13 @@ export default class DefaultDockerRegistry extends Component<
                         <Alert
                             showIcon={true}
                             type="warning"
-                            message="If you have a cluster (more than one server), you need to have a default push registry. If you only have one single server, disabling default push registry is fine."
+                            message="Si tiene un clúster (más de un servidor), necesita tener un registro de inserción predeterminado. Si solo tiene un servidor, deshabilitar el registro de inserción predeterminado está bien."
                         />
                     </div>
                 </Modal>
-                <h3>Default Push Registry</h3>
+                <h3>Registro de inserción predeterminado</h3>
                 <p>
-                    Docker Registry for Pushing New Images:{' '}
+                Registro de Docker para enviar nuevas imágenes:{' '}
                     <ClickableLink
                         onLinkClicked={() => {
                             self.setState({

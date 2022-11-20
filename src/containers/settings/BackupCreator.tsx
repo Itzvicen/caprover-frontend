@@ -53,17 +53,17 @@ export default class BackupCreator extends ApiComponent<
         return (
             <div>
                 <p>
-                    Create a backup of CapRover configs in order to be able to
-                    spin up a clone of this server. Note that your application
-                    data (volumes, and images) are not part of this backup. This
-                    backup only includes the server configuration details, such
-                    as root domains, app names, SSL certs and etc.
-                </p>
-                <p>
-                    See the documents for more details on how to restore your
-                    server using the backup file.
-                </p>
-                <p>Note that this is, currently, an EXPERIMENTAL FEATURE.</p>
+                Cree una copia de seguridad de las configuraciones de CapRover para poder
+                     hacer girar un clon de este servidor. Tenga en cuenta que su aplicación
+                     los datos (volúmenes e imágenes) no forman parte de esta copia de seguridad. Este
+                     La copia de seguridad solo incluye los detalles de configuración del servidor, como
+                     como dominios raíz, nombres de aplicaciones, certificados SSL, etc.
+                 </p>
+                 <p>
+                     Consulte los documentos para obtener más detalles sobre cómo restaurar su
+                     servidor utilizando el archivo de copia de seguridad.
+                 </p>
+                 <p>Tenga en cuenta que esto es, actualmente, una CARACTERÍSTICA EXPERIMENTAL.</p>
                 <br />
 
                 <Row justify="end">
@@ -75,7 +75,7 @@ export default class BackupCreator extends ApiComponent<
                         <span>
                             <CloudDownloadOutlined />
                         </span>{' '}
-                        &nbsp; Create Backup
+                        &nbsp; Crear Backup
                     </Button>
                 </Row>
             </div>

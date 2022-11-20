@@ -25,7 +25,7 @@ class Settings extends Component<
                     >
                         <Card
                             style={{ height: '100%' }}
-                            title="Check for Updates"
+                            title="Buscar actualizaciones"
                         >
                             <CheckUpdate isMobile={this.props.isMobile} />
                         </Card>
@@ -46,7 +46,7 @@ class Settings extends Component<
                     >
                         <Card
                             style={{ height: '100%' }}
-                            title="NGINX Configurations"
+                            title="Configuraciones de NGINX"
                         >
                             <NginxConfig isMobile={this.props.isMobile} />
                         </Card>
@@ -58,7 +58,7 @@ class Settings extends Component<
                     >
                         <Card
                             style={{ height: '100%' }}
-                            title="Change Password"
+                            title="Cambiar contraseña"
                         >
                             <ChangePass isMobile={this.props.isMobile} />
                         </Card>
@@ -68,7 +68,7 @@ class Settings extends Component<
                         lg={{ span: 14 }}
                         xs={{ span: 23 }}
                     >
-                        <Card style={{ height: '100%' }} title="Disk Cleanup">
+                        <Card style={{ height: '100%' }} title="Limpiar disco">
                             <DiskCleanup isMobile={this.props.isMobile} />
                         </Card>
                     </Col>

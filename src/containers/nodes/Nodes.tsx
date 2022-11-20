@@ -53,7 +53,7 @@ class CurrentNodes extends ApiComponent<
                 nodeToAdd.captainIpAddress
             )
             .then(function () {
-                message.success('Node added successfully!')
+                message.success('Nodo añadido correctamente!')
             })
             .catch(Toaster.createCatcher())
             .then(function () {
@@ -83,13 +83,13 @@ class CurrentNodes extends ApiComponent<
                     }}
                 >
                     <Row justify="center">
-                        <b>Node ID:&nbsp;&nbsp;</b> {node.nodeId}
+                        <b>ID del nodo:&nbsp;&nbsp;</b> {node.nodeId}
                     </Row>
                     <hr />
                     <div style={{ height: 10 }} />
                     <Row>
                         <Col lg={{ span: 12 }} xs={{ span: 24 }}>
-                            <b>Type: </b>
+                            <b>Tipo: </b>
                             {node.isLeader ? 'Leader (Main Node)' : node.type}
                         </Col>
                         <Col lg={{ span: 12 }} xs={{ span: 24 }}>
@@ -99,11 +99,11 @@ class CurrentNodes extends ApiComponent<
                     </Row>
                     <Row>
                         <Col lg={{ span: 12 }} xs={{ span: 24 }}>
-                            <b>State: </b>
+                            <b>Estado: </b>
                             {node.state}
                         </Col>
                         <Col lg={{ span: 12 }} xs={{ span: 24 }}>
-                            <b>Status: </b>
+                            <b>Estatus: </b>
                             {node.status}
                         </Col>
                     </Row>
@@ -124,7 +124,7 @@ class CurrentNodes extends ApiComponent<
                             {(node.nanoCpu / 1000000000).toFixed(0)} cores
                         </Col>
                         <Col lg={{ span: 12 }} xs={{ span: 24 }}>
-                            <b>Architecture: </b>
+                            <b>Arquitectura: </b>
                             {node.architecture}
                         </Col>
                     </Row>
@@ -135,7 +135,7 @@ class CurrentNodes extends ApiComponent<
                             {node.hostname}
                         </Col>
                         <Col lg={{ span: 12 }} xs={{ span: 24 }}>
-                            <b>Docker Version: </b>
+                            <b>Versión de Docker: </b>
                             {node.dockerEngineVersion}
                         </Col>
                     </Row>
@@ -193,14 +193,14 @@ class CurrentNodes extends ApiComponent<
                         <Alert
                             type="warning"
                             showIcon={true}
-                            message="Cannot add more nodes as no default push registry is set. To add more nodes and create a cluster, you first need to add a docker registry and set it as the default push registry."
+                            message="No se pueden agregar más nodos porque no se ha establecido ningún registro de inserción predeterminado. Para agregar más nodos y crear un clúster, primero debe agregar un registro docker y configurarlo como el registro de inserción predeterminado."
                         />
                     </div>
                 )}
                 <div style={{ height: 50 }} />
 
                 <Divider type="horizontal">
-                    <h4>Current Cluster Nodes</h4>
+                    <h4>Nodos del cluster actuales</h4>
                 </Divider>
                 <div style={{ height: 30 }} />
 

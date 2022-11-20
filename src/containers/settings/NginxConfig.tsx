@@ -1,6 +1,5 @@
 import { SyncOutlined } from '@ant-design/icons'
 import { Button, Input, Row } from 'antd'
-import React from 'react'
 import Toaster from '../../utils/Toaster'
 import Utils from '../../utils/Utils'
 import ApiComponent from '../global/ApiComponent'
@@ -86,30 +85,30 @@ export default class NginxConfig extends ApiComponent<
                     isRefreshTimerActivated={self.state.isRefreshTimerActivated}
                 >
                     <div>
-                        Nginx is successfully updated, CapRover will restart in
-                        30 seconds.{' '}
-                        <b>
-                            Please wait until the page is automatically
-                            refreshed.
+                    Nginx se actualizó con éxito, CapRover se reiniciará en
+                         30 segundos.{' '}
+                         <b>
+                             Por favor espere hasta que la página sea automáticamente
+                             renovado
                         </b>
                         <br />
                         <br />
                     </div>
                 </ReloadCaptainModal>{' '}
                 <p>
-                    CapRover allows you to set custom configurations for your
-                    nginx router. This will allow high customization level in
-                    terms of caching, special routing, http2 and etc.
-                </p>
-                <p>
-                    Note that templates are built using EJS template pattern. Do
-                    not change the areas between <code>&lt;%</code> and{' '}
-                    <code>%&gt;</code> unless you really know what you're doing!
-                </p>
-                <br />
-                <p>
-                    <b>Base Config Location in nginx container</b>:
-                    /etc/nginx/nginx.conf
+                Spacecloud te permite establecer configuraciones personalizadas para su
+                     enrutador nginx. Esto permitirá un alto nivel de personalización en
+                     términos de almacenamiento en caché, enrutamiento especial, http2, etc.
+                 </p>
+                 <p>
+                     Tenga en cuenta que las plantillas se construyen utilizando el patrón de plantilla EJS. Hacer
+                     no cambiar las áreas entre <code>&lt;%</code> y{' '}
+                     <code>%&gt;</code> a menos que realmente sepa lo que está haciendo.
+                 </p>
+                 <br />
+                 <p>
+                     <b>Ubicación de configuración base en contenedor nginx</b>:
+                     /etc/nginx/nginx.conf
                 </p>
                 <div
                     className={
@@ -133,7 +132,7 @@ export default class NginxConfig extends ApiComponent<
                     <div style={{ height: 40 }} />
                 </div>
                 <p>
-                    <b>CapRover Config Location in nginx container</b>:
+                    <b>Ubicación de configuración de CapRover en contenedor nginx</b>:
                     /etc/nginx/conf.d/captain-root.conf
                 </p>
                 <div
@@ -167,7 +166,7 @@ export default class NginxConfig extends ApiComponent<
                                 self.onLoadDefaultNginxConfigClicked()
                             }
                         >
-                            Load Default and Edit
+                            Cargar predeterminado y editar
                         </Button>
                     </Row>
 
@@ -182,7 +181,7 @@ export default class NginxConfig extends ApiComponent<
                             <span>
                                 <SyncOutlined />
                             </span>{' '}
-                            &nbsp; Save and Update
+                            &nbsp; Guardar y actualizar
                         </Button>
                     </Row>
                 </div>

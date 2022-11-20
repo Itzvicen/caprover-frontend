@@ -45,10 +45,10 @@ export default class OneClickAppSelector extends ApiComponent<
                 apps.push({
                     name: TEMPLATE_ONE_CLICK_APP,
                     description:
-                        'A template for creating one-click apps. Mainly for development!',
+                        'Plantilla para crear apps con un click. Principalmente para dasarrollo',
                     logoUrl: '/icon-512x512.png',
                     baseUrl: '',
-                    displayName: '>> TEMPLATE <<',
+                    displayName: '>> Plantilla <<',
                 })
                 self.setState({
                     oneClickAppList: apps,
@@ -77,12 +77,11 @@ export default class OneClickAppSelector extends ApiComponent<
             >
                 <div>
                     <p>
-                        This is mainly for testing. You can copy and paste your
-                        custom One-Click app template here. See{' '}
+                    Esto es principalmente para la prueba. Puede copiar y pegar su plantilla de aplicación One-Click personalizada aquí. Mira{' '}
                         <NewTabLink url="https://github.com/caprover/one-click-apps/tree/master/public/v4/apps">
-                            the main one click apps GitHub repository
+                            el repositorio principal de Spacecloud
                         </NewTabLink>{' '}
-                        for samples and ideas.
+                        para muestras e ideas.
                     </p>
                 </div>
 
@@ -110,7 +109,7 @@ export default class OneClickAppSelector extends ApiComponent<
                 <div style={{ height: 10 }} />
                 {!isOneClickJsonValid ? (
                     <Alert
-                        message="One Click data that you've entered is not a valid JSON."
+                        message="Los datos que has introducidos no son validos para JSON."
                         type="error"
                     />
                 ) : (
@@ -167,7 +166,7 @@ export default class OneClickAppSelector extends ApiComponent<
             <div>
                 <Row justify="center">
                     <Col xs={{ span: 23 }} lg={{ span: 23 }}>
-                        <Card title="One Click Apps">
+                        <Card title="Apliacaciones de un click">
                             <div
                                 className={
                                     self.state.isCustomTemplateSelected
@@ -176,18 +175,14 @@ export default class OneClickAppSelector extends ApiComponent<
                                 }
                             >
                                 <p>
-                                    Choose an app, a database or a bundle
-                                    (app+database) from the list below. The rest
-                                    is magic, well... Wizard!
+                                    Elija una aplicación, una base de datos o un paquete (Aplicación + base de datos) de la lista a continuación. el resto es magia
                                 </p>
                                 <p>
-                                    One click apps are retrieved from the
-                                    official{' '}
+                                Las aplicaciones de un clic se recuperan del repositorio oficial{' '}
                                     <NewTabLink url="https://github.com/caprover/one-click-apps">
-                                        CapRover One Click Apps Repository{' '}
+                                        Spacecloud Apps un click{' '}
                                     </NewTabLink>
-                                    by default. You can add other public/private
-                                    repositories if you want to.
+                                    por defecto. Puede agregar otros repositorios públicos/privados si lo desea.
                                 </p>
 
                                 {self.createOneClickAppListGrid()}
@@ -198,7 +193,7 @@ export default class OneClickAppSelector extends ApiComponent<
                             </div>
                             {Utils.isSafari() ? (
                                 <Alert
-                                    message="You seem to be using Safari. Deployment of one-click apps may be unstable on Safari. Using Chrome is recommended"
+                                    message="Parece que estás usando Safari. La implementación de aplicaciones de un solo clic puede ser inestable en Safari. Se recomienda usar Chrome"
                                     type="warning"
                                 />
                             ) : (

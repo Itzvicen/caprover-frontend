@@ -115,31 +115,31 @@ export default class Dashboard extends ApiComponent<
             .then(function () {
                 return new Promise(function (resolve, reject) {
                     Modal.success({
-                        title: 'Enable HTTPS',
+                        title: 'Habilitar HTTPS',
                         content: (
                             <div>
                                 <p>
-                                    CapRover uses{' '}
+                                    Spacecloud usa{' '}
                                     <NewTabLink url="https://letsencrypt.org/">
                                         Let&#39;s Encrypt
                                     </NewTabLink>{' '}
-                                    to provide free SSL Certificates (HTTPS).
-                                    This email address is very important as
-                                    Let&#39;s Encrypt uses it for validation
-                                    purposes. Please provide a valid email here.
+                                    para proporcionar certificados SSL gratuitos (HTTPS).
+                                     Esta dirección de correo electrónico es muy importante ya que
+                                     Let&#39;s Encrypt lo usa para la validación
+                                     propósitos Proporcione un correo electrónico válido aquí.
                                 </p>
                                 <p>
-                                    IMPORTANT: Once you enable HTTPS, you cannot
-                                    edit the root domain ever again. Make sure
-                                    you use a good root domain. A good practice
-                                    is to go one level deeper and setup your
-                                    root domain. For example, if you own{' '}
-                                    <code>example.com</code>, use{' '}
-                                    <code>*.caprover-root.example.com</code> as
-                                    your root domain. This will allow you to
-                                    better manage your subdomains, do not use{' '}
-                                    <code>*.example.com</code> as your root
-                                    domain.
+                                IMPORTANTE: una vez que habilite HTTPS, no podrá
+                                     edite el dominio raíz nunca más. Cerciorarse
+                                     utiliza un buen dominio raíz. una buena practica
+                                     es ir un nivel más profundo y configurar su
+                                     dominio raíz. Por ejemplo, si posee {' '}
+                                     <code>example.com</code>, use{' '}
+                                     <code>*.caprover-root.example.com</code> como
+                                     su dominio raíz. Esto le permitirá
+                                     administre mejor sus subdominios, no use {' '}
+                                     <code>*.example.com</code> como raíz
+                                     dominio.
                                 </p>
                                 <Input
                                     placeholder="your@email.com"
@@ -173,16 +173,16 @@ export default class Dashboard extends ApiComponent<
                 if (data === IGNORE) return
 
                 Modal.success({
-                    title: 'Root Domain HTTPS activated!',
+                    title: '¡HTTPS activado para el dominio raíz!',
                     content: (
                         <div>
                             <p>
-                                You can now use{' '}
+                            Ahora puedes usar{' '}
                                 <code>
                                     {`https://${self.state.apiData.rootDomain}`}
                                 </code>
-                                . Next step is to Force HTTPS to disallow plain
-                                HTTP traffic.
+                                . El siguiente paso es forzar HTTPS para que no permita
+                                 tráfico HTTP.
                             </p>
                         </div>
                     ),
@@ -208,14 +208,14 @@ export default class Dashboard extends ApiComponent<
             content: (
                 <div>
                     <p>
-                        You have already enabled SSL for your root domain.
-                        Changing the root domain URL will invalidate HTTPS on
-                        root domain and all default subdomains for apps if you
-                        have any apps.
-                    </p>
-                    <p>
-                        You can still re-enable HTTPS after changing the root
-                        domain.
+                    Ya ha habilitado SSL para su dominio raíz.
+                         Cambiar la URL del dominio raíz invalidará HTTPS en
+                         dominio raíz y todos los subdominios predeterminados para aplicaciones si
+                         tener alguna aplicación.
+                     </p>
+                     <p>
+                         Todavía puede volver a habilitar HTTPS después de cambiar la raíz
+                         dominio.
                     </p>
                 </div>
             ),
@@ -239,8 +239,8 @@ export default class Dashboard extends ApiComponent<
                     content: (
                         <div>
                             <p>
-                                Click Ok to get redirected to your new root
-                                domain. You need to log in again.
+                            Haga clic en Aceptar para ser redirigido a su nueva raíz
+                                 dominio. Necesita iniciar sesión de nuevo.
                             </p>
                         </div>
                     ),
@@ -298,31 +298,31 @@ export default class Dashboard extends ApiComponent<
                     <Card title="Spacecloud configuraciones dominio raíz">
                         <div>
                             <p>
-                                The very first thing that CapRover needs is a
-                                root domain. For example, if you own{' '}
-                                <i>myawesomecompany.com</i>, you can use{' '}
-                                <i>captain.myawesomecompany.com</i> or{' '}
-                                <i>foo.bar.myawesomecompany.com</i> as your root
-                                domain. First, you need to make sure that the ip
-                                address for all subdomains of the root domain
-                                resolve to the CapRover ip address. To do this,
-                                go to the DNS settings in your domain provider
-                                website, and set a wild card A entry.
-                                <br /> For example: <b> Type:</b> <u>A</u>,{' '}
-                                <b>Name (or host):</b> <u>*.caprover-root</u>,
-                                <b> IP (or Points to):</b>{' '}
-                                <u>110.120.130.140</u> where this is the IP
-                                address of your CapRover machine.
+                            Lo primero que necesita Spacecloud es un
+                                dominio raíz. Por ejemplo, si posee {' '}
+                                <i>myawesomecompany.com</i>, puede usar{' '}
+                                <i>captain.myawesomecompany.com</i> o {' '}
+                                <i>foo.bar.myawesomecompany.com</i> como raíz
+                                dominio. Primero, debe asegurarse de que la ip
+                                dirección para todos los subdominios del dominio raíz
+                                resuelva a la dirección IP de Spacecloud. Para hacer esto,
+                                vaya a la configuración de DNS en su proveedor de dominio
+                                sitio web y establezca una entrada comodín A.
+                                <br /> Por ejemplo: <b> Escriba:</b> <u>A</u>,{' '}
+                                <b>Nombre (o host):</b> <u>*.spacecloud-root</u>,
+                                <b> IP (o Dirige a):</b>{' '}
+                                <u>110.120.130.140</u> donde esta es la IP
+                                dirección de su máquina Spacecloud.
                             </p>
                             <p>
                                 <i>
-                                    NOTE: DNS settings might take several hours
-                                    to take into effect. See{' '}
+                                NOTA: la configuración de DNS puede tardar varias horas
+                                     para entrar en vigor. Mira{' '}
                                     <NewTabLink url="https://ca.godaddy.com/help/what-factors-affect-dns-propagation-time-1746">
                                         {' '}
-                                        here
+                                        aquí
                                     </NewTabLink>{' '}
-                                    for more details.
+                                    para más detalles.
                                 </i>
                             </p>
                         </div>
@@ -331,11 +331,11 @@ export default class Dashboard extends ApiComponent<
                         <Row>
                             <div>
                                 <p>
-                                    For example, if you set{' '}
-                                    <code>*.my-root.example.com</code> to the IP
-                                    address of your server, just enter{' '}
-                                    <code>my-root.example.com</code> in the box
-                                    below:
+                                Por ejemplo, si establece {' '}
+                                     <code>*.my-root.example.com</code> a la IP
+                                     dirección de su servidor, simplemente ingrese {' '}
+                                     <code>my-root.example.com</code> en el cuadro
+                                     abajo:
                                 </p>
                                 <br />
                                 <div>
@@ -345,7 +345,7 @@ export default class Dashboard extends ApiComponent<
                                         defaultValue={
                                             self.state.apiData.rootDomain + ''
                                         }
-                                        enterButton="Update Domain"
+                                        enterButton="Actualizar dominio"
                                         onSearch={(value) =>
                                             self.updateRootDomainClicked(value)
                                         }
@@ -363,7 +363,7 @@ export default class Dashboard extends ApiComponent<
                                     }
                                     onClick={() => self.onEnableSslClicked()}
                                 >
-                                    Enable HTTPS
+                                    Habilitar HTTPS
                                 </Button>
                             </Tooltip>
                             &nbsp;&nbsp;
@@ -375,7 +375,7 @@ export default class Dashboard extends ApiComponent<
                                     }
                                     onClick={() => self.onForceSslClicked()}
                                 >
-                                    Force HTTPS
+                                    Forzar HTTPS
                                 </Button>
                             </Tooltip>
                         </Row>
@@ -394,42 +394,42 @@ export default class Dashboard extends ApiComponent<
         return (
             <Row justify="center">
                 <Col xs={{ span: 23 }} lg={{ span: 16 }}>
-                    <Card title="Spacecloud setup inicial">
+                    <Card title="Spacecloud configuración inicial ⚙️">
                         <div>
                             <h3>
-                                Congratulations!{' '}
+                            ¡Felicidades!{' '}
                                 <span aria-label="Congrats" role="img">
                                     🎉🎉
                                 </span>
                             </h3>
                             <p>
-                                <b /> You have installed CapRover successfully!{' '}
-                                <b>
-                                    But you still need to assign a domain and
-                                    finish the HTTPS setup to fully set up
-                                    CapRover!{' '}
-                                </b>
-                                You can set up your CapRover instance in two
-                                ways:
+                            <b /> ¡Has instalado Spacecloud correctamente!{' '}
+                                 <b>
+                                     Pero aún necesita asignar un dominio y
+                                     termine la configuración de HTTPS para configurar completamente
+                                     Spacecloud!{' '}
+                                 </b>
+                                 Puede configurar su instancia de Spacecloud en dos
+                                 maneras:
                             </p>
 
                             <ul>
                                 <li>
-                                    <b>Command Line Tool (RECOMMENDED): </b> On
-                                    your local machine, simply run
-                                    <br />
-                                    <code>npm i -g caprover</code>
-                                    <br />
-                                    followed by
-                                    <br />
-                                    <code>caprover serversetup</code>. Then
-                                    follow the guide.
+                                <b>Herramienta de línea de comandos (RECOMENDADO): </b> activada
+                                     su máquina local, simplemente ejecuta
+                                     <br />
+                                     <code>npm i -g caprover</code>
+                                     <br />
+                                     seguido de
+                                     <br />
+                                     <code>configuración del servidor Spacecloud</code>. Después
+                                     sigue la guía.
                                 </li>
                                 <li>
-                                    <b>Use the panel below: </b> This is a
-                                    non-guided version of the Command Line
-                                    method. Use this method only for the purpose
-                                    of experimentation.
+                                <b>Utilice el panel siguiente: </b> Este es un
+                                     versión no guiada de la línea de comandos
+                                     método. Use este método solo para el propósito
+                                     de experimentación
                                 </li>
                             </ul>
                         </div>
@@ -449,43 +449,43 @@ export default class Dashboard extends ApiComponent<
         return (
             <Row justify="center">
                 <Col xs={{ span: 23 }} lg={{ span: 16 }}>
-                    <Card title="CapRover">
+                    <Card title="Spacecloud">
                         <div>
                             <h3>
-                                Congratulations!{' '}
+                            ¡Felicidades!{' '}
                                 <span aria-label="Congrats" role="img">
                                     🎉🎉
                                 </span>
                             </h3>
                             <p>
-                                You have installed and set CapRover up
-                                successfully! You can now deploy your apps!
-                                Remember, with CapRover, you can deploy
-                                applications from source code (such as Node.js,
-                                PHP, Java, Ruby, Python etc), and you can also
-                                deploy ready to go applications such as MySQL,
-                                MongoDB, WordPress, Redis, and many more!
+                            Ha instalado y configurado Spacecloud
+                                 ¡exitosamente! ¡Ya puede implementar sus aplicaciones!
+                                 Recuerde, con CapRover, puede implementar
+                                 aplicaciones desde el código fuente (como Node.js,
+                                 PHP, Java, Ruby, Python, etc.), y también puede
+                                 implementar aplicaciones listas para usar como MySQL,
+                                 ¡MongoDB, WordPress, Redis y muchos más!
                             </p>
 
                             <p>
-                                For more information on how to deploy
-                                applications from source code, make sure to have
-                                a look at our
+                            Para obtener más información sobre cómo implementar
+                                 aplicaciones desde el código fuente, asegúrese de tener
+                                 un vistazo a nuestro
                                 <a
                                     href="https://caprover.com/docs/sample-apps.html"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
                                     {' '}
-                                    sample apps.
+                                    aplicaciones de muestra.
                                 </a>
                             </p>
 
                             <p>
                                 <i>
-                                    You can always update your root domain, but
-                                    be careful! Your SSL certificates will get
-                                    revoked because of this domain change.
+                                Siempre puede actualizar su dominio raíz, pero
+                                     ¡ten cuidado! Sus certificados SSL obtendrán
+                                     revocado debido a este cambio de dominio.
                                 </i>
                             </p>
 
@@ -499,7 +499,7 @@ export default class Dashboard extends ApiComponent<
                                         })
                                     }}
                                 >
-                                    Change Root Domain Anyways
+                                    Cambiar el dominio raíz de todos modos
                                 </Button>
                             </Row>
                         </div>

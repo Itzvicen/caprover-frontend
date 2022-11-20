@@ -57,8 +57,8 @@ class NetDataInfo extends ApiComponent<
             .then(function () {
                 message.success(
                     netDataInfo.isEnabled
-                        ? 'NetData is started and updated!'
-                        : 'NetData has stopped!'
+                        ? 'NetData se inicia y actualiza!'
+                        : 'NetData se ha detenido!'
                 )
             })
             .catch(Toaster.createCatcher())
@@ -84,7 +84,7 @@ class NetDataInfo extends ApiComponent<
             <div>
                 <Row justify="center">
                     <Col xs={{ span: 23 }} lg={{ span: 18 }}>
-                        <Card title="NetData Monitoring Tool">
+                        <Card title="Herramienta de monitoreo de NetData">
                             <NetDataDescription />
                             <hr />
                             <div style={{ height: 30 }} />
@@ -103,7 +103,7 @@ class NetDataInfo extends ApiComponent<
                                         type="primary"
                                     >
                                         <span>
-                                            Start NetData Engine &nbsp;
+                                        Iniciar NetData engine &nbsp;
                                             <PoweroffOutlined />
                                         </span>
                                     </Button>
@@ -134,7 +134,7 @@ class NetDataInfo extends ApiComponent<
                                         danger
                                     >
                                         <span>
-                                            Turn NetData Off &nbsp;
+                                            Parar NetData &nbsp;
                                             <PoweroffOutlined />
                                         </span>
                                     </Button>
@@ -155,7 +155,7 @@ class NetDataInfo extends ApiComponent<
                                             type="primary"
                                         >
                                             <span>
-                                                Open NetData &nbsp;
+                                                Abrir NetData &nbsp;
                                                 <AreaChartOutlined />
                                             </span>
                                         </Button>
@@ -184,7 +184,7 @@ class NetDataInfo extends ApiComponent<
                                             )
                                         }
                                     >
-                                        Update NetData
+                                        Actualizar NetData
                                     </Button>
                                 </Row>
                             </div>

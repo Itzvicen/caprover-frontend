@@ -3,7 +3,7 @@ import {
     CodeOutlined,
     DisconnectOutlined,
     LinkOutlined,
-    LoadingOutlined,
+    LoadingOutlined
 } from '@ant-design/icons'
 import { Card, Col, Input, Row, Table, Tooltip } from 'antd'
 import { ColumnProps } from 'antd/lib/table'
@@ -182,7 +182,7 @@ class AppsTable extends Component<
 
         const searchAppInput = (
             <Input
-                placeholder="Search by Name"
+                placeholder="Busca por nombre"
                 type="text"
                 onChange={(event) =>
                     self.setState({
@@ -207,7 +207,7 @@ class AppsTable extends Component<
                             <React.Fragment>
                                 <span>
                                     <CodeOutlined />
-                                    &nbsp;&nbsp;&nbsp;Your Apps
+                                    &nbsp;&nbsp;&nbsp;Tus apps
                                 </span>
                                 <br />
                                 {self.props.isMobile && (
@@ -238,7 +238,7 @@ class AppsTable extends Component<
                                                         appName
                                                     )}
                                                 >
-                                                    Details
+                                                    Detalles
                                                 </Link>
                                             }
                                             style={{
@@ -263,10 +263,10 @@ class AppsTable extends Component<
                                                 )}
                                             </p>
                                             <p>
-                                                Instance Count: {instanceCount}
+                                                Número de instancias: {instanceCount}
                                             </p>
                                             <p>
-                                                Open in Browser:{' '}
+                                                Abrir en el navegador:{' '}
                                                 {!!notExposeAsWebApp ? undefined : (
                                                     <NewTabLink
                                                         url={`http${

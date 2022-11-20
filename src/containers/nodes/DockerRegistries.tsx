@@ -55,7 +55,7 @@ class DockerRegistries extends ApiComponent<
         this.apiManager
             .setDefaultPushDockerRegistry(id)
             .then(function () {
-                message.success('Default push registry successfully changed.')
+                message.success('El registro de inserción predeterminado se modificó correctamente.')
             })
             .catch(Toaster.createCatcher())
             .then(function () {
@@ -83,7 +83,7 @@ class DockerRegistries extends ApiComponent<
 
         promiseToStart
             .then(function () {
-                message.success('Registry deleted.')
+                message.success('Registro eliminado.')
             })
             .catch(Toaster.createCatcher())
             .then(function () {
@@ -98,7 +98,7 @@ class DockerRegistries extends ApiComponent<
         this.apiManager
             .updateDockerRegistry(dockerRegistry)
             .then(function () {
-                message.success('Registry updated.')
+                message.success('Registro actualizado.')
             })
             .catch(Toaster.createCatcher())
             .then(function () {
@@ -117,7 +117,7 @@ class DockerRegistries extends ApiComponent<
 
         promiseToStart
             .then(function () {
-                message.success('Docker registry successfully added!')
+                message.success('¡Registro de Docker agregado con éxito!')
             })
             .catch(Toaster.createCatcher())
             .then(function () {
@@ -154,7 +154,7 @@ class DockerRegistries extends ApiComponent<
                 >
                     <Alert
                         type="info"
-                        message="No registries have been added yet. Go ahead and add your first registry!"
+                        message="Aún no se han añadido registros. ¡Continúe y agregue su primer registro!"
                     />
                 </div>
 

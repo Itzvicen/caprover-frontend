@@ -1,10 +1,10 @@
 import { InfoCircleOutlined } from '@ant-design/icons'
 import { Button, Input, Modal, Row, Tooltip } from 'antd'
-import React, { Component } from 'react'
+import { Component } from 'react'
 import {
     IRegistryApi,
     IRegistryInfo,
-    IRegistryTypes,
+    IRegistryTypes
 } from '../../models/IRegistryInfo'
 import Utils from '../../utils/Utils'
 import PasswordField from '../global/PasswordField'
@@ -53,8 +53,8 @@ export default class DockerRegistryAdd extends Component<
         return (
             <div>
                 <Modal
-                    title="Self-Hosted Registry"
-                    okText="Enable Self-Hosted Registry"
+                    title="Registro auto-hospedado"
+                    okText="Habilitar registro auto-hospedado"
                     onCancel={() => self.setState({ modalShowing: undefined })}
                     onOk={() => {
                         self.setState({ modalShowing: undefined })
@@ -65,16 +65,16 @@ export default class DockerRegistryAdd extends Component<
                     visible={self.state.modalShowing === ADDING_LOCAL}
                 >
                     <p>
-                        You can read more about this type of registry on the
-                        page behind this modal, specifically under "More Info"
-                        section. Do you want to proceed and enable self-hosted
-                        Docker Registry?
+                    Puede leer más sobre este tipo de registro en el
+                         página detrás de este modal, específicamente en "Más información"
+                         sección. ¿Desea continuar y habilitar el alojamiento propio?
+                         Registro Docker?
                     </p>
                 </Modal>
 
                 <Modal
-                    title="Remote Registry"
-                    okText="Add Remote Registry"
+                    title="Registro remoto"
+                    okText="Añadir registro remoto"
                     onCancel={() => self.setState({ modalShowing: undefined })}
                     onOk={() => {
                         self.setState({ modalShowing: undefined })
@@ -85,15 +85,15 @@ export default class DockerRegistryAdd extends Component<
                     visible={self.state.modalShowing === ADDING_REMOTE}
                 >
                     <p>
-                        You can read more about this type of registry on the
-                        page behind this modal, specifically under "More Info"
-                        section.
+                    Puede leer más sobre este tipo de registro en el
+                         página detrás de este modal, específicamente en "Más información"
+                         sección.
                     </p>
                     <div style={{ height: 20 }} />
                     <div style={{ maxWidth: 360 }}>
                         <Input
-                            addonBefore="Username"
-                            placeholder="username | email@gmail.com"
+                            addonBefore="Nombre de usuario"
+                            placeholder="usuario | email@gmail.com"
                             type="email"
                             value={self.state.remoteRegistryToAdd.registryUser}
                             onChange={(e) => {
@@ -106,7 +106,7 @@ export default class DockerRegistryAdd extends Component<
                         />
                         <div style={{ height: 20 }} />
                         <PasswordField
-                            addonBefore="Password"
+                            addonBefore="Contraseña"
                             placeholder="mypassword"
                             defaultValue={
                                 self.state.remoteRegistryToAdd.registryPassword
@@ -121,7 +121,7 @@ export default class DockerRegistryAdd extends Component<
                         />
                         <div style={{ height: 20 }} />
                         <Input
-                            addonBefore="Domain"
+                            addonBefore="Dominio"
                             placeholder="registry-1.docker.io"
                             type="text"
                             value={
@@ -137,10 +137,10 @@ export default class DockerRegistryAdd extends Component<
                         />
                         <div style={{ height: 20 }} />
                         <Input
-                            addonBefore="Image Prefix"
-                            placeholder="username"
+                            addonBefore="Prefijo de imagen"
+                            placeholder="usuario"
                             addonAfter={
-                                <Tooltip title="Your images will be tagged as RegistryDomain/ImagePrefix/ImageName. For most providers, Image Prefix is exactly your username, unless the field DOMAIN is specific to you, in that case, this prefix is empty.">
+                                <Tooltip title="Sus imágenes se etiquetarán como RegistryDomain/ImagePrefix/ImageName. Para la mayoría de los proveedores, el prefijo de la imagen es exactamente su nombre de usuario, a menos que el campo DOMINIO sea específico para usted, en ese caso, este prefijo está vacío.">
                                     <InfoCircleOutlined />
                                 </Tooltip>
                             }
@@ -169,7 +169,7 @@ export default class DockerRegistryAdd extends Component<
                                 self.setState({ modalShowing: ADDING_LOCAL })
                             }
                         >
-                            Add Self-Hosted Registry
+                            Agregar registro auto-hospedado
                         </Button>
                     </Row>
                 </div>
@@ -186,7 +186,7 @@ export default class DockerRegistryAdd extends Component<
                             })
                         }
                     >
-                        Add Remote Registry
+                        Agregar registro remoto
                     </Button>
                 </Row>
             </div>

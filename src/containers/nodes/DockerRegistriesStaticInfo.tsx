@@ -6,49 +6,49 @@ export default class DockerRegistriesStaticInfo extends Component {
         return (
             <div>
                 <p>
-                    Setting up Docker Registry is <b>only required</b> if you
-                    plan to run your CapRover on a cluster. For single node
-                    CapRover deployments, Docker Registry is not recommended as
-                    it makes deployment significantly slower.
+                La configuración de Docker Registry es <b>solo necesaria</b> si
+                     planee ejecutar su CapRover en un clúster. Para un solo nodo
+                     Implementaciones de CapRover, Docker Registry no se recomienda como
+                     hace que la implementación sea significativamente más lenta.
                 </p>
                 <Collapse>
-                    <Collapse.Panel header="More info" key="1">
+                    <Collapse.Panel header="Más información" key="1">
                         <p>
-                            Docker registry is a repository for your built
-                            images. It is similar to Github, or Bitbucket, with
-                            private repositories. However, instead of source
-                            code, it contains the built artifacts for your
-                            application. It is required for cluster mode, as
-                            other nodes need to access the built image in order
-                            for your application to run on them.
+                        El registro de Docker es un repositorio para su compilado
+                            imágenes Es similar a Github, o Bitbucket, con
+                            repositorios privados. Sin embargo, en lugar de la fuente
+                            código, contiene los artefactos construidos para su
+                            solicitud. Es necesario para el modo clúster, ya que
+                            otros nodos necesitan acceder a la imagen construida para
+                            para que su aplicación se ejecute en ellos.
                         </p>
                         <p>
-                            CapRover provides two methods for you to setup your
-                            docker registry:
+                            Spacecloud proporciona dos métodos para configurar su
+                            registro acoplable:
                         </p>
                         <ul>
                             <li>
-                                <b>Self hosted Docker Registry:</b> This is the
-                                simplest way to setup a docker registry.
-                                CapRover creates an instance of Docker Registry
-                                on the main machine and it manages the registry
-                                for you. However, it has its own limitation. If
-                                your main machine is destroyed, your local
-                                images will be lost. In most cases, this is not
-                                a disaster as you can re-deploy your apps from
-                                your source code.
+                                <b>Registro de Docker autohospedado:</b> Este es el
+                                forma más sencilla de configurar un registro docker.
+                                CapRover crea una instancia de Docker Registry
+                                en la máquina principal y gestiona el registro
+                                para ti. Sin embargo, tiene su propia limitación. Si
+                                su máquina principal está destruida, su local
+                                las imágenes se perderán. En la mayoría de los casos, esto no es
+                                un desastre ya que puede volver a implementar sus aplicaciones desde
+                                su código fuente.
                                 <br />
                             </li>
                             <li>
-                                <b>Remote Docker Registry:</b> This approach
-                                relies on a remote service to act as your Docker
-                                Registry. Using this approach, you'll have a
-                                more reliable cluster, assuming the third party
-                                service you use is reliable! There are multiple
-                                private Docker Registry services available:
-                                Google Container Registry, Amazon EC2 Container
-                                Registry, Quay and etc. Note that this approach
-                                costs you money.
+                                <b>Registro remoto de Docker:</b> este enfoque
+                                depende de un servicio remoto para actuar como su Docker
+                                Registro. Con este enfoque, tendrá una
+                                clúster más fiable, suponiendo que el tercero
+                                ¡El servicio que usas es confiable! hay varios
+                                Servicios privados de Docker Registry disponibles:
+                                Registro de contenedores de Google, contenedor Amazon EC2
+                                Registry, Quay, etc. Tenga en cuenta que este enfoque
+                                te cuesta dinero.
                             </li>
                         </ul>
                     </Collapse.Panel>

@@ -72,21 +72,21 @@ export default class CheckUpdate extends ApiComponent<
         return (
             <div>
                 <p>
-                    CapRover allows in-place updates to be installed. However,
-                    always read the change logs before updating your CapRover.
-                    There might be breaking changes that you need to be aware
-                    of. The update usually takes around 60 seconds and your
-                    CapRover may become unresponsive until the update process is
-                    finished. Your apps will stay functional and responsive
-                    during this time, except for a very short period of 10
-                    seconds or less.
+                Spacecloud permite instalar actualizaciones en el lugar. Sin embargo,
+                     Siempre lea los registros de cambios antes de actualizar su CapRover.
+                     Puede haber cambios importantes que debe tener en cuenta
+                     de. La actualización suele tardar unos 60 segundos y su
+                     CapRover puede dejar de responder hasta que finalice el proceso de actualización.
+                     acabado. Sus aplicaciones seguirán siendo funcionales y receptivas
+                     durante este tiempo, excepto por un período muy corto de 10
+                     segundos o menos.
                 </p>
                 <br />
                 <p>
-                    <b>Current Version</b>: {versionInfo.currentVersion}
+                    <b>Versión actual</b>: {versionInfo.currentVersion}
                 </p>
                 <p>
-                    <b>Latest Stable Version</b>: {versionInfo.latestVersion}
+                    <b>Última versión estable</b>: {versionInfo.latestVersion}
                 </p>
                 <div>
                     <p
@@ -109,14 +109,14 @@ export default class CheckUpdate extends ApiComponent<
                             <span>
                                 <CloudDownloadOutlined />
                             </span>{' '}
-                            &nbsp; Install Update
+                            &nbsp; Instalar actualización
                         </Button>
                     </Row>
                 </div>
 
                 <div className={!versionInfo.canUpdate ? '' : 'hide-on-demand'}>
                     <Alert
-                        message="Your CapRover is the latest version."
+                        message="Tu Spacecloud tiene la última versión."
                         type="info"
                     />
                 </div>
@@ -126,19 +126,18 @@ export default class CheckUpdate extends ApiComponent<
                 >
                     <div>
                         <p>
-                            Update takes about a minute to complete depending on
-                            your server connection speed.
-                        </p>
-                        <p>
-                            Your CapRover dashboard is not functional during the
-                            update. Please wait until this page is refreshed
-                            automatically.
-                        </p>
-                        <p>
-                            You might see an nginx error briefly after the
-                            update. But it will fix itself in a few seconds.
-                        </p>
-
+                        La actualización tarda aproximadamente un minuto en completarse dependiendo de
+                             la velocidad de conexión de su servidor.
+                         </p>
+                         <p>
+                             Su tablero CapRover no funciona durante el
+                             actualizar. Espere hasta que esta página se actualice
+                             automáticamente.
+                         </p>
+                         <p>
+                             Es posible que vea un error de nginx brevemente después de la
+                             actualizar. Pero se arreglará solo en unos segundos.
+                         </p>
                         <br />
                         <br />
                     </div>

@@ -45,7 +45,7 @@ export default class OneClickGrid extends Component<
                     )}
                     {!isUsingOfficialImage ? undefined : (
                         <Tooltip
-                            title={`Uses the official image provided by the application developer, or a trusted source like Bitnami or LinuxServer`}
+                            title={`Utiliza la imagen oficial proporcionada por el desarrollador de la aplicación o una fuente confiable como Bitnami o LinuxServer`}
                         >
                             <SafetyCertificateTwoTone />
                         </Tooltip>
@@ -115,8 +115,8 @@ export default class OneClickGrid extends Component<
                     }}
                 >
                     <Input.Search
-                        style={{ maxWidth: 200, marginBottom: 30 }}
-                        placeholder="Search for an app..."
+                        style={{ maxWidth: 200, marginBottom: 40 }}
+                        placeholder="Busca una app..."
                         onChange={({ currentTarget }) => {
                             const searchTerm = (currentTarget.value || '')
                                 .trim()
@@ -175,10 +175,10 @@ export default class OneClickGrid extends Component<
                         apps.map((app) => self.createOneClickApp(app))
                     ) : (
                         <div>
-                            <Empty description="No matching App" />
+                            <Empty description="Ningúna aplicacion encontrada" />
                             <div style={{ paddingTop: 30 }}>
-                                What if the app/database I want is not listed
-                                here? &nbsp;
+                            ¿Qué pasa si la aplicación / base de datos que quiero no está en la lista?
+                                 aquí? &nbsp;
                                 <NewTabLink url="https://caprover.com/docs/one-click-apps.html#what-about-other-apps">
                                     <InfoCircleOutlined />
                                 </NewTabLink>

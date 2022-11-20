@@ -23,12 +23,12 @@ export default class ChangePass extends ApiComponent<
     onChangePasswordClicked() {
         const self = this
         if (!this.state.new1) {
-            message.error('New password cannot be empty')
+            message.error('La nueva contraseña no puede estar vacía')
             return
         }
 
         if (this.state.new1 !== this.state.new2) {
-            message.error('New passwords confirm does not match')
+            message.error('La confirmación de nuevas contraseñas no coincide')
             return
         }
 
@@ -37,7 +37,7 @@ export default class ChangePass extends ApiComponent<
         this.apiManager
             .changePass(this.state.old, this.state.new1)
             .then(function () {
-                message.success('Password changed successfully!')
+                message.success('¡Contraseña cambiada con éxito!')
             })
             .catch(Toaster.createCatcher())
             .then(function () {
@@ -53,20 +53,20 @@ export default class ChangePass extends ApiComponent<
 
         return (
             <div>
-                Old Password
+                Contraseña anterior
                 <Input.Password
                     onChange={(e) => this.setState({ old: e.target.value })}
                 />
                 <div style={{ height: 20 }} />
                 <hr />
                 <div style={{ height: 20 }} />
-                New Password
+                Nueva contraseña
                 <Input.Password
                     maxLength={30}
                     onChange={(e) => this.setState({ new1: e.target.value })}
                 />
                 <div style={{ height: 20 }} />
-                Confirm New Password
+                Confirmar nueva contraseña
                 <Input.Password
                     maxLength={30}
                     onChange={(e) => this.setState({ new2: e.target.value })}
@@ -78,7 +78,7 @@ export default class ChangePass extends ApiComponent<
                         onClick={() => this.onChangePasswordClicked()}
                         type="primary"
                     >
-                        Change Password
+                        Cambiar contraseña
                     </Button>
                 </Row>
             </div>

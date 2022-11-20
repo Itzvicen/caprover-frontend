@@ -9,42 +9,42 @@ export default class NetDataDescription extends Component {
                     <NewTabLink url="https://github.com/netdata/netdata/">
                         NetData
                     </NewTabLink>{' '}
-                    is one of the most popular and most powerful monitoring
-                    tools that provide a web interface. It is a system for
-                    distributed real-time performance and health monitoring. It
-                    provides unparalleled insights, in real-time, of everything
-                    happening on the system it runs (including applications such
-                    as web and database servers), using modern interactive web
-                    dashboards.
+                    es uno de los sistemas de monitoreo más populares y poderosos
+                     herramientas que proporcionan una interfaz web. es un sistema para
+                     Rendimiento distribuido en tiempo real y supervisión de la salud. Eso
+                     proporciona información inigualable, en tiempo real, de todo
+                     sucediendo en el sistema que ejecuta (incluidas aplicaciones como
+                     como servidores web y de base de datos), utilizando la web interactiva moderna
+                     tableros de instrumentos
                 </p>
                 <p>
-                    NetData is fast and efficient, designed to permanently run
-                    on all systems (physical &amp; virtual servers, containers,
-                    IoT devices), without disrupting their core function. The
-                    current image of NetData embeded in CapRover uses a default
-                    configuration for
+                NetData es rápido y eficiente, diseñado para ejecutarse permanentemente
+                     en todos los sistemas (servidores físicos y virtuales, contenedores,
+                     dispositivos IoT), sin interrumpir su función principal. los
+                     la imagen actual de NetData incrustada en CapRover utiliza un valor predeterminado
+                     configuración para
                     <NewTabLink url="https://docs.netdata.cloud/docs/anonymous-statistics/">
-                        &nbsp;statistics
+                        &nbsp;estadisticas
                     </NewTabLink>
-                    . You can recompile CapRover with a different customized
-                    image if you'd like.
+                    . Puede volver a compilar CapRover con una configuración personalizada diferente
+                     imagen si lo desea.
                 </p>
                 <p>
-                    CapRover provides a simple interface to enable NetData on
-                    your CapRover instance. Currently, CapRover only supports
-                    installing NetData on your <b>leader node</b>, i.e., the
-                    node where CapRover instance resides. This limitation is due
-                    to a limitation in Docker interface,
+                Spacecloud proporciona una interfaz simple para habilitar NetData en
+                     su instancia de CapRover. Actualmente, CapRover solo admite
+                     instalando NetData en su <b>nodo líder</b>, es decir, el
+                     nodo donde reside la instancia de CapRover. Esta limitación se debe
+                     a una limitación en la interfaz de Docker,
                     <NewTabLink url="https://github.com/moby/moby/issues/25885/">
                         {' '}
-                        see here
+                        ver aquí
                     </NewTabLink>
                     .
                 </p>
                 <p>
-                    <i>For more details regarding NetData, visit their </i>
+                    <i>Para obtener más detalles sobre NetData, visite su </i>
                     <NewTabLink url="https://github.com/firehol/netdata/">
-                        GitHub page
+                        página de GitHub
                     </NewTabLink>
                     .
                 </p>

@@ -43,14 +43,14 @@ export default class DockerRegistryTable extends Component<
     deleteRegistry(id: string) {
         if (id === this.props.apiData.defaultPushRegistryId) {
             Modal.warn({
-                title: 'Cannot Delete Default Push',
+                title: 'No se puede eliminar la inserción predeterminada',
                 content: (
                     <div>
-                        This registry is set to be the default push. You cannot
-                        delete the default push registry. To remove, first you
-                        need to change the default push registry to another
-                        registry, or completely disable the default push
-                        registry. Then, come back and delete this.
+                        Este registro está configurado para ser el impulso predeterminado. No puedes
+                         elimine el registro de inserción predeterminado. Para quitar, primero tú
+                         necesita cambiar el registro push predeterminado a otro
+                         registro, o deshabilite completamente el push predeterminado
+                         registro. Luego, regresa y borra esto.
                     </div>
                 ),
             })
@@ -66,7 +66,7 @@ export default class DockerRegistryTable extends Component<
     editRegistry(dockerRegistry: IRegistryInfo) {
         if (dockerRegistry.registryType === IRegistryTypes.LOCAL_REG) {
             message.warn(
-                'You cannot edit the self hosted registry. It is managed by CapRover.'
+                'No puede editar el registro autohospedado. Es administrado por Spacecloud.'
             )
             return
         }
@@ -81,26 +81,26 @@ export default class DockerRegistryTable extends Component<
         const self = this
         const columns = [
             {
-                title: 'User',
+                title: 'Usuario',
                 dataIndex: 'registryUser' as 'registryUser',
             },
             {
-                title: 'Password',
+                title: 'Contraseña',
                 dataIndex: 'registryPassword' as 'registryPassword',
                 render: (registryPassword: string) => {
                     return <span>Edit to see.</span>
                 },
             },
             {
-                title: 'Domain',
+                title: 'Dominio',
                 dataIndex: 'registryDomain' as 'registryDomain',
             },
             {
-                title: 'Image Prefix',
+                title: 'Prefijo de imagen',
                 dataIndex: 'registryImagePrefix' as 'registryImagePrefix',
             },
             {
-                title: 'Actions',
+                title: 'Acciones',
                 dataIndex: 'id' as 'id',
                 render: (id: string, reg: IRegistryInfo) => {
                     return (
@@ -134,8 +134,8 @@ export default class DockerRegistryTable extends Component<
         return (
             <div style={{ maxWidth: 360 }}>
                 <Input
-                    addonBefore="Username"
-                    placeholder="username | email@gmail.com"
+                    addonBefore="Nombre de usuario"
+                    placeholder="Usuario | email@gmail.com"
                     type="email"
                     value={self.state.remoteRegistryToEdit!.registryUser}
                     onChange={(e) => {
@@ -148,7 +148,7 @@ export default class DockerRegistryTable extends Component<
                 />
                 <div style={{ height: 20 }} />
                 <PasswordField
-                    addonBefore="Password"
+                    addonBefore="Contraseña"
                     placeholder="mypassword"
                     defaultValue={
                         self.state.remoteRegistryToEdit!.registryPassword
@@ -163,7 +163,7 @@ export default class DockerRegistryTable extends Component<
                 />
                 <div style={{ height: 20 }} />
                 <Input
-                    addonBefore="Domain"
+                    addonBefore="Dominio"
                     placeholder="registry-1.docker.io"
                     type="text"
                     value={self.state.remoteRegistryToEdit!.registryDomain}
@@ -177,8 +177,8 @@ export default class DockerRegistryTable extends Component<
                 />
                 <div style={{ height: 20 }} />
                 <Input
-                    addonBefore="Image Prefix"
-                    placeholder="username"
+                    addonBefore="Prefijo de imagen"
+                    placeholder="usuario"
                     addonAfter={
                         <Tooltip title="Your images will be tagged as RegistryDomain/ImagePrefix/ImageName. For most providers, Image Prefix is exactly your username, unless the field DOMAIN is specific to you, in that case, this prefix is empty.">
                             <InfoCircleOutlined />
@@ -204,7 +204,7 @@ export default class DockerRegistryTable extends Component<
             <div>
                 <Modal
                     destroyOnClose={true}
-                    title="Confirm Delete"
+                    title="Confirmar borrado"
                     okText="Delete Registry"
                     onCancel={() => self.setState({ modalShowing: undefined })}
                     onOk={() => {
@@ -221,8 +221,8 @@ export default class DockerRegistryTable extends Component<
                 </Modal>
                 <Modal
                     destroyOnClose={true}
-                    title="Edit Registry"
-                    okText="Save and Update"
+                    title="Editar registro"
+                    okText="Guardar y actualizar"
                     onCancel={() => self.setState({ modalShowing: undefined })}
                     onOk={() => {
                         self.setState({ modalShowing: undefined })
@@ -252,19 +252,19 @@ export default class DockerRegistryTable extends Component<
                                 title={registry.registryDomain}
                             >
                                 <div>
-                                    <b>User:</b> {registry.registryImagePrefix}
+                                    <b>Usuario:</b> {registry.registryImagePrefix}
                                 </div>
                                 <div>
-                                    <b>Password:</b> Edit to see.
+                                    <b>Contraseña:</b> Edit to see.
                                 </div>
                                 <div>
-                                    <b>Domain:</b> {registry.registryDomain}
+                                    <b>Dominio:</b> {registry.registryDomain}
                                 </div>
                                 <div>
-                                    <b>Image Prefix:</b> {registry.registryUser}
+                                    <b>Prefijo de imagen:</b> {registry.registryUser}
                                 </div>
                                 <div>
-                                    <b>Actions:</b>
+                                    <b>Acciones:</b>
                                     <span>
                                         <ClickableLink
                                             onLinkClicked={() => {

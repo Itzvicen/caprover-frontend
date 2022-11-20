@@ -1,7 +1,7 @@
 import { PlusCircleOutlined, QuestionCircleFilled } from '@ant-design/icons'
 import { Button, Card, Checkbox, Col, Input, Row, Tooltip } from 'antd'
 import Search from 'antd/lib/input/Search'
-import React, { Component, Fragment } from 'react'
+import { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { IMobileComponent } from '../../models/ContainerProps'
@@ -39,7 +39,7 @@ class CreateNewApp extends Component<
                         title={
                             <span>
                                 <PlusCircleOutlined />
-                                &nbsp;&nbsp;&nbsp;Create A New App
+                                &nbsp;&nbsp;&nbsp;Crear nueva aplicación
                             </span>
                         }
                     >
@@ -47,7 +47,7 @@ class CreateNewApp extends Component<
                             {self.props.isMobile ? (
                                 <Fragment>
                                     <Input
-                                        placeholder="my-amazing-app"
+                                        placeholder="nueva-app"
                                         onChange={(e) =>
                                             self.setState({
                                                 appName: e.target.value,
@@ -62,7 +62,7 @@ class CreateNewApp extends Component<
                                         }
                                         type="primary"
                                     >
-                                        Create New App
+                                        Crear nueva App
                                     </Button>
                                 </Fragment>
                             ) : (
@@ -89,7 +89,7 @@ class CreateNewApp extends Component<
                                     })
                                 }
                             >
-                                Has Persistent Data
+                                Persistencia de datos
                             </Checkbox>
                             &nbsp;&nbsp;
                             <Tooltip title="Mostly used for databases, see docs for details.">
@@ -107,7 +107,7 @@ class CreateNewApp extends Component<
 
                         <br />
                         <div style={{ textAlign: 'center' }}>
-                            <p>Or Select From</p>
+                            <p>O selecciona desde</p>
                             <Link to="/apps/oneclick/" className="ant-btn">
                                 One-Click Apps/Databases
                             </Link>

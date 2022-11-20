@@ -101,15 +101,15 @@ export default class LoadBalancerStats extends ApiComponent<
             <div>
                 <Row justify="center">
                     <Col xs={{ span: 23 }} lg={{ span: 22 }}>
-                        <Card title="Load Balancer Stats">
+                        <Card title="Estadísticas del equilibrador de carga">
                             <Row gutter={10} justify="center">
                                 <Col xs={{ span: 24 }} lg={{ span: 6 }}>
-                                    <Tooltip title="Constantly going up as refreshing the values">
+                                    <Tooltip title="Constantemente subiendo como refrescando los valores">
                                         <div>
                                             <LoadBalancerStatsCard
                                                 icon={<Icons.GlobalOutlined />}
                                                 color="#2361ae"
-                                                titleText="Total Requests"
+                                                titleText="Solicitudes totales"
                                                 titleNumber={`${this.state.apiData.total}`}
                                                 text1={``}
                                                 text2={``}
@@ -121,30 +121,30 @@ export default class LoadBalancerStats extends ApiComponent<
                                     <LoadBalancerStatsCard
                                         icon={<Icons.ClusterOutlined />}
                                         color="#23ae89"
-                                        titleText="Active Connections"
+                                        titleText="Conexiones activas"
                                         titleNumber={`${this.state.apiData.activeConnections}`}
-                                        text1={`${this.state.apiData.handled} handled`}
-                                        text2={`${this.state.apiData.accepted} accepted`}
+                                        text1={`${this.state.apiData.handled} Manejada`}
+                                        text2={`${this.state.apiData.accepted} Acceptadas`}
                                     />
                                 </Col>
                                 <Col xs={{ span: 24 }} lg={{ span: 6 }}>
                                     <LoadBalancerStatsCard
                                         icon={<Icons.SyncOutlined />}
                                         color="#d3a938"
-                                        titleText="Active Requests"
+                                        titleText="Peticiones activas"
                                         titleNumber={`${
                                             this.state.apiData.reading +
                                             this.state.apiData.writing
                                         }`}
-                                        text1={`${this.state.apiData.reading} reading`}
-                                        text2={`${this.state.apiData.writing} writing`}
+                                        text1={`${this.state.apiData.reading} Leyendo`}
+                                        text2={`${this.state.apiData.writing} Escribiendo`}
                                     />
                                 </Col>
                                 <Col xs={{ span: 24 }} lg={{ span: 6 }}>
                                     <LoadBalancerStatsCard
                                         icon={<Icons.ClockCircleOutlined />}
                                         color="#ae2323"
-                                        titleText="Waiting Requests"
+                                        titleText="Peticiones en espera"
                                         titleNumber={`${this.state.apiData.waiting}`}
                                         text1={`  `}
                                         text2={`  `}

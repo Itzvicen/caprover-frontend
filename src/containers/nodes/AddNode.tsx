@@ -51,13 +51,13 @@ export default class AddNode extends Component<
                 <Card
                     style={{ marginTop: 16 }}
                     type="inner"
-                    title="Attach New Node"
+                    title="Añadir nuevo nodo"
                 >
                     <Row justify="space-between">
                         <Col lg={{ span: 11 }} xs={{ span: 24 }}>
                             <Input
                                 style={{ marginBottom: 10 }}
-                                addonBefore="New node IP Address"
+                                addonBefore="Nueva IP del nodo"
                                 placeholder="123.123.123.123"
                                 type="text"
                                 value={nodeToAdd.remoteNodeIpAddress}
@@ -72,7 +72,7 @@ export default class AddNode extends Component<
                         <Col lg={{ span: 11 }} xs={{ span: 24 }}>
                             <Input
                                 style={{ marginBottom: 10 }}
-                                addonBefore="CapRover IP Address"
+                                addonBefore="Dirección IP Spacecloud"
                                 placeholder="123.123.123.123"
                                 type="text"
                                 value={nodeToAdd.captainIpAddress}
@@ -86,9 +86,9 @@ export default class AddNode extends Component<
                         </Col>
                         <Col span={24} style={{ marginTop: 10 }}>
                             <div style={{ paddingBottom: 5 }}>
-                                &nbsp;SSH Private Key for <b>root</b>
+                                &nbsp;Clave privada SSH para <b>root</b>
                                 &nbsp;
-                                <Tooltip title="Use RSA key. Other types such as Ed25519 are not supported, for those use the alternative method below.">
+                                <Tooltip title="Utilice la clave RSA. Otros tipos, como Ed25519, no son compatibles, para estos utilice el método alternativo a continuación.">
                                     <InfoCircleOutlined
                                         style={{
                                             paddingTop: 8,
@@ -123,14 +123,14 @@ export default class AddNode extends Component<
                             }
                         >
                             <Radio.Button value="worker">
-                                Join as worker node
+                                Unirse como nodo esclavo
                             </Radio.Button>
                             <Radio.Button value="manager">
-                                Join as manager node
+                                Unirse como nodo principal
                             </Radio.Button>
                         </Radio.Group>
                         &nbsp;
-                        <Tooltip title="Tip: For every 5 workers, add 2 manager nodes, keeping manager node count as an odd number. Therefore, use worker node for the first 4 nodes you add to your cluster.">
+                        <Tooltip title="Sugerencia: por cada 5 trabajadores, agregue 2 nodos de administrador, manteniendo el recuento de nodos de administrador como un número impar. Por lo tanto, use el nodo trabajador para los primeros 4 nodos que agregue a su clúster.">
                             <InfoCircleOutlined
                                 style={{ paddingTop: 8, paddingLeft: 8 }}
                             />
@@ -144,7 +144,7 @@ export default class AddNode extends Component<
                             style={{ maxWidth: 250 }}
                         >
                             <Input
-                                addonBefore="SSH Port"
+                                addonBefore="Puerto SSH"
                                 type="text"
                                 value={nodeToAdd.sshPort}
                                 onChange={(e) =>
@@ -157,9 +157,9 @@ export default class AddNode extends Component<
                             xs={{ span: 24 }}
                             style={{ maxWidth: 250, marginLeft: 10 }}
                         >
-                            <Tooltip title="Using non-root users with sudo access will NOT work. If you want to use a non-root account, it must be able run docker commands without sudo. Or simply use the alternative method below.">
+                            <Tooltip title="El uso de usuarios no root con acceso sudo NO funcionará. Si desea utilizar una cuenta que no sea raíz, debe poder ejecutar los comandos de la ventana acoplable sin sudo. O simplemente use el método alternativo a continuación.">
                                 <Input
-                                    addonBefore="SSH User"
+                                    addonBefore="Usuario SSH"
                                     type="text"
                                     value={nodeToAdd.sshUser}
                                     onChange={(e) =>
@@ -181,60 +181,61 @@ export default class AddNode extends Component<
                                 )
                             }
                         >
-                            <ClusterOutlined /> &nbsp; Join Cluster
+                            <ClusterOutlined /> &nbsp; Unirse al cluster
                         </Button>
                     </Row>
                     <div style={{ height: 50 }} />
                     <Collapse>
                         <Collapse.Panel header="Alternative Method" key="1">
                             <p>
-                                CapRover uses SSH to connect to your nodes and
-                                have them join the cluster. Sometimes, this
-                                process does not work due to non standard SSH
-                                configs such as custom ports, custom usernames,
-                                and etc.
+                            CapRover usa SSH para conectarse a sus nodos y
+                                 hacer que se unan al grupo. A veces, esto
+                                 el proceso no funciona debido a SSH no estándar
+                                 configuraciones como puertos personalizados, nombres de usuario personalizados,
+                                 y etc.
                             </p>
                             <p>
-                                In these cases, it will be much simpler to run
-                                the commands manually your self from an SSH
-                                session. First, from your{' '}
-                                <b>main leader node</b>, run the following
-                                command:
+                            En estos casos, será mucho más sencillo ejecutar
+                                 los comandos manualmente desde un SSH
+                                 sesión. Primero, de su{' '}
+                                 <b>nodo líder principal</b>, ejecute lo siguiente
+                                 dominio:
                             </p>
                             <code>docker swarm join-token worker</code>
 
                             <p style={{ marginTop: 20 }}>
-                                It will output something like this:
+                            Saldrá algo como esto:
                             </p>
                             <code>
-                                To add a worker to this swarm, run the following
-                                command:
-                                <br />
-                                docker swarm join --token
+                            Para agregar un trabajador a este enjambre, ejecute lo siguiente
+                                 dominio:
+                                 <br />
+                                 docker swarm join --token
                                 SWMTKN-secret-token-here 127.0.0.1:2377
                             </code>
                             <p style={{ marginTop: 20 }}>
-                                Then, copy the command from the output of above,
-                                and simply from the worker node, run that
-                                command.
+                            Luego, copie el comando de la salida de arriba,
+                                 y simplemente desde el nodo trabajador, ejecute eso
+                                 dominio.
                             </p>
                             <p style={{ marginTop: 20 }}>
-                                Depending on your network configurations, you
-                                may also need to append the command with{' '}
+                            Luego, copie el comando de la salida de arriba,
+                                 y simplemente desde el nodo trabajador, ejecute eso
+                                 dominio.
                                 <code>
                                     {' '}
                                     --advertise-addr WORKER_EXTERNAL_IP:2377
                                 </code>
-                                . See{' '}
+                                . Ver{' '}
                                 <a
                                     href="https://github.com/caprover/caprover/issues/572"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
                                     {' '}
-                                    this issue{' '}
+                                    este problema{' '}
                                 </a>{' '}
-                                for more details.
+                                para más detalles.
                             </p>
                         </Collapse.Panel>
                     </Collapse>

@@ -85,31 +85,31 @@ export default class DiskCleanup extends ApiComponent<
             <div>
                 <div>
                     <p>
-                        Every time you deploy a new build, Docker builds a new
-                        image for you. Typically, a large part of this image is
-                        shared between the old version and the new version, but
-                        a small chunk is added to your disk with each build. You
-                        can read more about disk cleanup in the docs, but as a
-                        simple interface, this widget gives you the ability to
-                        perform image cleanups on demand.
+                    Cada vez que implementa una nueva compilación, Docker crea una nueva
+                        imagen para ti. Por lo general, una gran parte de esta imagen es
+                        compartida entre la versión antigua y la nueva versión, pero
+                        se agrega una pequeña porción a su disco con cada compilación. Tú
+                        Puede leer más sobre la limpieza del disco en los documentos, pero como
+                        interfaz simple, este widget le da la capacidad de
+                        realizar limpiezas de imágenes a pedido.
                     </p>
                     <p>
-                        You can perform this action, after each deploy. But it's
-                        typically not needed with that frequency. For typical
-                        mid-sized projects, it's recommended to perform this
-                        cleanup after every ~20 builds.
+                        Puede realizar esta acción, después de cada implementación. Pero es
+                        normalmente no se necesita con esa frecuencia. para tipico
+                        proyectos medianos, se recomienda realizar esto
+                        limpieza después de cada ~ 20 compilaciones.
                     </p>
                     <p>
-                        With default parameter, it keeps the last two recent
-                        builds of all current apps, and creates a list of images
-                        that can be deleted (by clicking on Get List button).
-                        You can select which images you want to delete and click
-                        on Remove Images button. You might notice that some
-                        images are not deleted even though you clicked on Remove
-                        Images, it means they are being directly or indirectly
-                        in-use by Docker. A common example For indirect usage is
-                        an image whose child image is being used by an alive
-                        container.
+                        Con parámetro por defecto, mantiene los dos últimos recientes
+                        compilaciones de todas las aplicaciones actuales y crea una lista de imágenes
+                        que se pueden eliminar (haciendo clic en el botón Obtener lista).
+                        Puede seleccionar las imágenes que desea eliminar y hacer clic en
+                        en el botón Eliminar imágenes. Podrías notar que algunos
+                        las imágenes no se eliminan aunque haya hecho clic en Eliminar
+                        Imágenes, significa que están siendo directa o indirectamente
+                        en uso por Docker. Un ejemplo común para el uso indirecto es
+                        una imagen cuya imagen secundaria está siendo utilizada por un ser vivo
+                        envase.
                     </p>
 
                     <br />
@@ -117,9 +117,9 @@ export default class DiskCleanup extends ApiComponent<
 
                 <Row>
                     <Col span={12}>
-                        <Tooltip title="For example, enter 2 in order to exclude 2 most recent builds during clean-up">
+                        <Tooltip title="Por ejemplo, ingrese 2 para excluir las 2 compilaciones más recientes durante la limpieza">
                             <Input
-                                addonBefore="Keep most recent"
+                                addonBefore="Mantener el más reciente"
                                 type="number"
                                 value={this.state.mostRecentLimit + ''}
                                 onChange={(e) => {
@@ -139,7 +139,7 @@ export default class DiskCleanup extends ApiComponent<
                                 <span>
                                     <SyncOutlined />
                                 </span>{' '}
-                                &nbsp; Get List
+                                &nbsp; Obtener lista
                             </Button>
                         </Row>
                     </Col>
@@ -154,7 +154,7 @@ export default class DiskCleanup extends ApiComponent<
                             title={
                                 hasSelectedImagesForRemoval
                                     ? ''
-                                    : 'Select images that you want to remove. You can select all from the top row.'
+                                    : 'Seleccione las imágenes que desea eliminar. Puede seleccionar todo desde la fila superior.'
                             }
                         >
                             <Button
@@ -168,14 +168,14 @@ export default class DiskCleanup extends ApiComponent<
                                 <span>
                                     <DeleteOutlined />{' '}
                                 </span>{' '}
-                                &nbsp; Remove Unused Images
+                                &nbsp; Eliminar imágenes no utilizadas
                             </Button>
                         </Tooltip>
                     </Row>
                     <div style={{ height: 20 }} />
                     <div>
-                        <b>NOTE: </b> Images that are being used (directly or
-                        indirectly) will not be deleted even if you select them.
+                    <b>NOTA: </b> Las imágenes que se utilizan (directa o
+                         indirectamente) no se eliminarán incluso si los selecciona.
                     </div>
                     <div style={{ height: 20 }} />
                     <UnusedImagesTable
